@@ -1,3 +1,36 @@
 article {
     background: aqua;
 }
+
+article {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    padding: 5px;
+    border-width: 4px;
+    background: rgb(208, 208, 208);
+}
+
+input {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+textarea {
+    margin-top: 15px;
+    width: 350px;
+}
+
+article button {
+    margin: 15px;
+}
