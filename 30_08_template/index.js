@@ -76,6 +76,14 @@ const addArticle = () => {
         hideEditor();
     }
 
+    const searchArticle = (text) => {
+      searchInput.addEventListener('click', searchButton);
+      if (articleTitle.innerText == text) {
+
+      }
+    };
+    searchArticle();
+
 
     editButton.addEventListener("click", openEditor);
     saveButton.addEventListener("click", saveArticle);
