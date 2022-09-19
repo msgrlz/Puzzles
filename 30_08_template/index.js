@@ -7,12 +7,13 @@ const addArticleButton = document.getElementById('addArticleButton');
 const initSearch = () => {
     let inputValue = '';
 
-    const clickHandler = () => {
+    const startSearch = () => {
         const children = Array.from(father.childNodes);
         const callback = (el) => {
-            if (el.style && el.innerHTML && el.innerHTML.includes(inputValue)) {
+          const articleTitle = el.querySelector('span').innerHTML;
+            if (articleTitle.includes(inputValue)) {
                 el.style.display = 'block';
-            } else if (el.style) {
+            } else {
                 el.style.display = 'none';
             }
         }
@@ -21,15 +22,16 @@ const initSearch = () => {
     const inputHandler = (e) => {
         inputValue = e.target.value;
     }
-    searchButton.addEventListener('click', clickHandler);
+    searchButton.addEventListener('click', startSearch);
     searchInput.addEventListener('input', inputHandler);
+
 }
 
 initSearch();
 // ---
 
 
-let inputArticleText = ''
+let inputArticleText = '';
 const inputArticle = (e) => {
     inputArticleText = e.target.value;
 }
@@ -76,13 +78,7 @@ const addArticle = () => {
         hideEditor();
     }
 
-    const searchArticle = (text) => {
-      searchInput.addEventListener('click', searchButton);
-      if (articleTitle.innerText == text) {
 
-      }
-    };
-    searchArticle();
 
 
     editButton.addEventListener("click", openEditor);
