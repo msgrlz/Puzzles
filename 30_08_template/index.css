@@ -20,6 +20,8 @@ input {
 
 .search {
     display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -27,10 +29,19 @@ input {
 }
 
 textarea {
-    margin-top: 15px;
+    padding-top: 15px;
     width: 350px;
 }
 
 article button {
     margin: 15px;
+}
+
+.input-group {
+  width: 800px;
+  margin: auto;
+  gap: 25px;
+}
+
+.btn-outline-success {
 }
