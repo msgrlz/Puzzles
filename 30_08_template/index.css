@@ -1,0 +1,47 @@
+article {
+    background: aqua;
+}
+
+article {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    padding: 5px;
+    border-width: 4px;
+    background: rgb(208, 208, 208);
+}
+
+input {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+textarea {
+    padding-top: 15px;
+    width: 350px;
+}
+
+article button {
+    margin: 15px;
+}
+
+.input-group {
+  width: 800px;
+  margin: auto;
+  gap: 25px;
+}
+
+.btn-outline-success {
+}
