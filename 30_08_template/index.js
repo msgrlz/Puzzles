@@ -98,3 +98,5 @@ console.log(textarea);
 textarea.addEventListener('input', inputArticle);
 
 addArticleButton.addEventListener('click', addArticle);
+
+
