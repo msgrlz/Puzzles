@@ -37,7 +37,6 @@
 // //  необходимо увеличивать количество в существующей покупке, а не добавлять новую.
 
 
-
 // // 3. Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
 
 // const buyProduct = () => {
@@ -48,33 +47,32 @@
 // Сортировка слов по глпсным буквам.
 
 
-
 const sortVowels = (arrWords = []) => {
   const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
-  const preparedWords = arrWords.map((word) => {
-    return word.toLowerCase();
-  });
-  return preparedWords.sort((wordA, wordB) => {
+  const preparedWords = arrWords.map(word => ({
+    word,
+    lowerWord: word.toLowerCase()
+  }));
+  const otherWords = [];
 
-    const firstLetterA = wordA[0];
-    const firstLetterB = wordB[0];
+  const vowelsWords = preparedWords.map((word) => {
+    const firstLetter = word.lowerWord[0];
+    if (vowels.includes(firstLetter)) {
+      return word;
+    }
+    otherWords.push(word.word);
+    return undefined;
+  }).filter(item => Boolean(item)).sort((wordA, wordB) => (
+    wordA.lowerWord[0] > wordB.lowerWord[0] ? 1 : -1
+  )).map(({word}) => word);
 
-    // const upperVowels = vowels.toUpperCase();// создаю новую переменную
-
-      if (vowels.includes(firstLetterA)) {
-        return 1;
-      }
-
-      if (vowels.includes(firstLetterB)) {
-        return -1;
-      }
-
-        return -1;
-  });
-
+  return [
+    ...vowelsWords,
+    ...otherWords
+  ];
 };
 
-const words = ['Коробка', 'Яблоко', 'Йод', 'апельсин', 'Работа', 'Театр', 'Ёжик', 'Урна','Облако', 'Собака', 'Енот'];
+const words = ['Коробка', 'Яблоко', 'яйца', 'Йод', 'апельсин', 'Работа', 'Театр', 'Ёжик', 'Урна', 'Облако', 'Собака', 'Енот'];
 
 console.log(sortVowels(words));
 
