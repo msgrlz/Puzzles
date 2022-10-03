@@ -47,25 +47,34 @@
 
 // Сортировка слов по глпсным буквам.
 
-const words = ['Коробка', 'Яблоко', 'Йод', 'апельсин', 'Работа', 'Театр', 'Ёжик', 'Урна','Облако', 'Собака', 'Енот'];
+
 
 const sortVowels = (arrWords = []) => {
   const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
-  return arrWords.sort().reverse().sort((wordA, wordB) => {
-    const firstLetterA = wordA[0].toLowerCase();
-    const firstLetterB = wordB[0].toLowerCase();
+  const preparedWords = arrWords.map((word) => {
+    return word.toLowerCase();
+  });
+  return preparedWords.sort((wordA, wordB) => {
+
+    const firstLetterA = wordA[0];
+    const firstLetterB = wordB[0];
+
+    // const upperVowels = vowels.toUpperCase();// создаю новую переменную
 
       if (vowels.includes(firstLetterA)) {
-        return -1;
-      }
-
-      if (vowels.includes(firstLetterB)) {
         return 1;
       }
 
-        return 0;
+      if (vowels.includes(firstLetterB)) {
+        return -1;
+      }
+
+        return -1;
   });
 
-
 };
+
+const words = ['Коробка', 'Яблоко', 'Йод', 'апельсин', 'Работа', 'Театр', 'Ёжик', 'Урна','Облако', 'Собака', 'Енот'];
+
 console.log(sortVowels(words));
+
