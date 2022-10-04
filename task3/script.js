@@ -49,19 +49,19 @@
 
 
 
-const sortVowels = (arrWords = []) => {
-  const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
-  const preparedWords = arrWords.map((word) => {
-    return word.toLowerCase();
+const sortVowels = (arrWords = []) => { // Создаем стрелочную функцию sortVowels, принимающую как аргумент пустой массив arrWords.
+  const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']; // Внутри функции создаем массив vowels, состоящий из гласных букв русского алфавита.
+  const preparedWords = arrWords.map((word) => { // Также создаем еще одну функцию preparedWords, в которой применим к пустому массиву arrWords метод map() для формирования нового массива путем вызова переданной функции один раз для каждого элемента. Аргумент word = item.
+    return word.toLowerCase(); // Возвращает элемент word в нижнем регистре.
   });
-  return preparedWords.sort((wordA, wordB) => {
+  return preparedWords.sort((wordA, wordB) => { // Возвращаем функцию preparedWords, сразу применяя к ней метод sort(), сравнивая первый строчный элемент со вторым в порядке следования кодовых символов Unicode.
 
-    const firstLetterA = wordA[0];
+    const firstLetterA = wordA[0]; // Создаем две переменные, присваивающие по первому символу(букве) элементы wordA и wordB.
     const firstLetterB = wordB[0];
 
     // const upperVowels = vowels.toUpperCase();// создаю новую переменную
 
-      if (vowels.includes(firstLetterA)) {
+      if (vowels.includes(firstLetterA)) { // Применяем к массиву гласных букв vowels метод includes(), определяющий - содержит ли массив искомый элемент. Сравниваем: если первый символ(буква) первого слова содержит любую букву из массива vowels, то складываем их в конец  массива.
         return 1;
       }
 
@@ -76,5 +76,5 @@ const sortVowels = (arrWords = []) => {
 
 const words = ['Коробка', 'Яблоко', 'Йод', 'апельсин', 'Работа', 'Театр', 'Ёжик', 'Урна','Облако', 'Собака', 'Енот'];
 
-console.log(sortVowels(words));
+console.log(sortVowels(words)); // Выводим в консоль отсортированный массив words и любуемся результатом!
 
