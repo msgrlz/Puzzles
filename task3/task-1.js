@@ -32,7 +32,6 @@ function sortProducts(productsList = []) {
 showProducts(sortProducts(products));
 
 
-
 // function sortProducts(productsList = []) {
 //   return productsList;
 //
