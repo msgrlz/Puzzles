@@ -25,10 +25,31 @@ function showProducts(productsList = []) {
     console.log('Продукт:', item.name,  'количество:', item.quantity, 'куплен:', (item.isBought) ? 'да' : 'нет');
   });
 }
-showProducts(products);
 
-// let isProductBought = (product) => product.isBought === 'yes';
+function sortProducts(productsList = []) {
+  return productsList.filter(item => (item.isBought === true));
+}
+showProducts(sortProducts(products));
+
+
+
+// function sortProducts(productsList = []) {
+//   return productsList;
 //
+// }
+// showProducts(sortProducts(products));
+
+// let users = [
+//   {id: 1, name: "Вася"},
+//   {id: 2, name: "Петя"},
+//   {id: 3, name: "Маша"}
+// ];
+//
+// // возвращает массив, состоящий из двух первых пользователей
+// let someUsers = users.filter(item => item.id < 3);
+//
+// console.log(someUsers); // 2
+
 // let someProduct = products.filter(isProductBought);
 // console.log(someProduct);
 
@@ -84,3 +105,4 @@ showProducts(products);
 //
 // products = addProduct(buyProduct(products, 'potato'));
 // console.log(products);
+
