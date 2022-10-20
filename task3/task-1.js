@@ -26,10 +26,15 @@ function showProducts(productsList = []) {
   });
 }
 
-function sortProducts(productsList = []) {
+function filterProducts(productsList = []) {
   return productsList.filter(item => (item.isBought === true));
 }
-showProducts(sortProducts(products));
+showProducts(filterProducts(products));
+
+// function sortProducts(productsList = []) {
+//   return productsList.sort(item => (item.isBought === true));
+// }
+// showProducts(sortProducts(products));
 
 
 // function sortProducts(productsList = []) {
